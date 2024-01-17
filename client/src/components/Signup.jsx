@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import loginImage from './Images/login.jpg';
+import Cookies from "js-cookie";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +26,8 @@ const Signup = () => {
             if (res.data == "exist") {
               toast.error("Email is already registered");
             } else if (res.data == "notexist") {
+              Cookies.set("email", formData.email, { expires: 7 })
+
               // Cookies.set("email", formData.email, { expires: 7 });
               // if (Cookies.get("allProducts") != undefined || Cookies.get("allProducts") != null) {
               //   Cookies.remove("allProducts")

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-
+import Cookies from "js-cookie";
 import { ToastContainer, toast } from "react-toastify";
 import loginImage from './Images/login.jpg';
 
@@ -24,6 +24,8 @@ const Login = () => {
           if (res.data == "loginPass") {
             // const token=jwt.sign({email:formData.email},"helloandwelcometotechywebdevtutorialonauthhelloandwelcometotechywebdevtutorialonauth")
             // Cookies.set("email", formData.email, { expires: 7 })
+            Cookies.set("email", formData.email, { expires: 7 })
+
             toast.success("Successfully Registered");
           } else if (res.data == "nouser") {
             toast.error("This email is not registered");

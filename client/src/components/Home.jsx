@@ -1,44 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import officeImage from './Images/office-2717014_1280.jpg';
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
-
+import aboutImage from './Images/office-620817_1280.jpg';
+// useState
+// useEffect
 const Home = () => {
 
-  const submit = async (e) => {
-    // e.preventDefault();
-
-    try {
-      await axios
-        .post(`${import.meta.env.VITE_APP_SERVER_URL}/test`)
-        .then((res) => {
-          if(res.data=="passed"){
-
-            alert("passed")
-          }
-          else if(res.data=="faied"){
-
-            alert("failed ")
-          }
-          else{
-
-            alert("none")
-          }
-        })
-        .catch((e) => {
-          toast.error("Somethig went wrong!");
-        });
-    } catch (e) {
-      toast.error("Somethig went wrong!");
-    }
-  };
 
 
   return (
     <div>
-      <button className="text-9xl" onClick={()=>{submit()}}>click</button>
-      <img
+     
+     <div style={{height:'100vh'}}>
+     <img
         className="absolute z-[-1] top-0 w-[100vw]"
+        style={{height:'100vh'}}
         // src="./src/components/Images/office-2717014_1280.jpg"
         src={officeImage}
         alt=""
@@ -50,8 +27,35 @@ const Home = () => {
 
         <button className="mt-16 pl-14 pr-14 bg-black text-white rounded-full p-3">Learn More</button>
       </div>
+     </div>
 
-      <div className="mt-96 bg-amber-800 w-[100vw]">
+
+      <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-0 mx-auto">
+          <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-0 lg:mb-0">
+              <h1 class="text-gray-900 text-6xl title-font font-medium mb-4">
+                Welcome to your Account Manager
+              </h1>
+
+              <p class="leading-relaxed mb-4">
+                It's a one stop solution for your problem. It is not only for
+                individuals but for business to keep a track of their account
+                details. In this digital world, it is difficult to keep remember
+                things.
+              </p>
+            </div>
+            <img
+              alt="ecommerce"
+              class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+              src={aboutImage}
+            />
+          </div>
+        </div>
+      </section>
+
+
+      <div className="mt-8 bg-amber-800 w-[100vw]">
         <h2 className="text-3xl text-white">The PassX</h2>
 
         <div className="grid grid-cols-2 w-[100%] ml-40 pb-20">

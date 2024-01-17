@@ -20,15 +20,39 @@ const userSchema = new mongoose.Schema({
         required: true
     }
 })
+const accountSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true
+    },
+    account_num: {
+        type: Number,
+        required: true
+    },
+    ifsc_code: {
+        type: String,
+        required: true
+    },
+    pin: {
+        type: Number,
+        required: true
+    },
+    web_link: {
+        type: String,
+        required: true
+    }
+})
 
 
 
 const userCollection = mongoose.model("userCollection", userSchema)
+const accountCollection = mongoose.model("accountCollection", accountSchema)
 
 
 // export { userCollection, productCollection, cartCollection,orderCollection };
 const collections = {
-   userCollection
+   userCollection,
+   accountCollection
   };
   
   module.exports = collections;
