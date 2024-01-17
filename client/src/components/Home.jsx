@@ -16,7 +16,7 @@ const Home = () => {
 
             alert("passed")
           }
-          if(res.data=="faied"){
+          else if(res.data=="faied"){
 
             alert("failed ")
           }
