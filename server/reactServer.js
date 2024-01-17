@@ -100,7 +100,6 @@ app.post("/signup", async (req, res) => {
 app.post("/test", async (req, res) => {
    
     try {
-        console.log('hmm')
         
        
             res.json("passed")

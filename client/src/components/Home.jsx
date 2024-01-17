@@ -29,7 +29,6 @@ const Home = () => {
           toast.error("Somethig went wrong!");
         });
     } catch (e) {
-      console.log('lol')
       toast.error("Somethig went wrong!");
     }
   };
