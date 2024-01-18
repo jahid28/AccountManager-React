@@ -34,6 +34,7 @@ function App() {
         <Routes>
         {cookieValue == undefined && <Route path="/login" element={<Login/>} />}
         {cookieValue != undefined && <Route path="/login" element={<MyAccount />} />}
+        {cookieValue != undefined && <Route path="/signup" element={<MyAccount />} />}
 
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
